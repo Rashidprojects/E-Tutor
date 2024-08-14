@@ -39,15 +39,19 @@ const Navbar = () => {
                 </li>
                 <li>English</li>
             </div>
-            <div className='flex md:hidden justify-center text-[#FF6636] z-20' onClick={handleSidebar}>
-                <FaBarsStaggered className='text-2xl' />
+            <div className='flex md:hidden justify-center text-[#ff6636] z-20' onClick={handleSidebar}>
+                <div className="relative top-3 right-7 ">
+                    <span  className={` block absolute h-0.5 w-6 text-[#ff6636] bg-current transform transition duration-500 ease-in-out ${sidebar ? ' rotate-45 ' : '-translate-y-1.5' }`}></span>
+                    <span  className={` block absolute  h-0.5 w-4 text-[#ff6636] bg-current   transform transition duration-500 ease-in-out ${ sidebar ? 'opacity-0': '' } `}></span>
+                    <span  className={` block absolute  h-0.5 w-6 text-[#ff6636] bg-current transform  transition duration-500 ease-in-out ${ sidebar ? '-rotate-45 ' : 'translate-y-1.5'} `}></span> 
+                </div>
             </div>
         </nav>
         <nav className='flex justify-between border border-gray-200 p-4 '>
-            <div className='flex items-center gap-6 md:gap-10'>
+            <div className='flex items-center gap-5 md:gap-10'>
                 <img src={logo} alt="" className='w-[100px] md:w-[100%]' />
                 <div className='relative '>
-                    <input type="text" placeholder='What do you want learn...' onChange={handleChange} className={`border border-gray-200 p-1 ${search ? 'px-2' : 'px-8'} rounded-md w-[300px]`}/>
+                    <input type="text" placeholder='What do you want learn...' onChange={handleChange} className={`border border-gray-200 p-1 ${search ? 'px-2' : 'px-8'} rounded-md w-[245px] md:w-[300px]`}/>
                     {
                         !search && (
                             <span className='absolute left-2 top-2 text-xl'> <FiSearch /> </span>
@@ -68,8 +72,8 @@ const Navbar = () => {
 
         {/* Sidebar */}
         
-        { sidebar && (
-            <div className='absolute bg-gray-800 text-white p-4 h-[100vh] z-10 right-0 top-0 pt-12 md:hidden'>
+        
+        <div className={`absolute bg-gray-800 text-white p-4 h-[100vh] z-10 right-0 top-0 pt-12 md:hidden transform transition-transform duration-500 ease-in ${sidebar ? 'translate-x-0' : 'translate-x-full' }  `}>
             <div className='flex flex-col justify-center items-center'>
                 <div className='gap-2 flex'>
                     <button className='bg-[#ffeee8] px-2 text-[#FF6636] rounded-sm'>Create Account</button>
@@ -89,7 +93,6 @@ const Navbar = () => {
                 <li className="px-2">Become an Instructor</li>
             </div>
         </div>
-        ) }
     </div>
   )
 }
