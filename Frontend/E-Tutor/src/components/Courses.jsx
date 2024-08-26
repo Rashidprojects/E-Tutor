@@ -12,7 +12,7 @@ const Courses = () => {
             <div>Office Productivity</div>
             <div>Marketing</div>
             <div>Photography & Video</div>
-            <div>Lifestyle</div>
+            <div>Lifestyle</div> 
             <div>Design</div>
             <div>Health & Fitness</div>
             <div>Music</div>
