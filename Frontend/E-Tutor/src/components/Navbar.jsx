@@ -3,7 +3,6 @@ import { useState } from 'react';
 import logo from '../assets/logo.png'
 import { FiSearch,FiShoppingCart } from "react-icons/fi";
 import { GoBell,GoHeart, } from "react-icons/go";
-import { FaBarsStaggered } from "react-icons/fa6";
 
 const Navbar = () => {
 
@@ -65,8 +64,8 @@ const Navbar = () => {
                     <li><GoHeart /></li>
                     <li><FiShoppingCart /></li>
                 </div>
-                <button className='bg-[#ffeee8] px-4 text-[#FF6636] rounded-sm'>Create Account</button>
-                <button className='bg-[#FF6636] px-4 text-[#fff] rounded-sm'>Sign in</button>
+                <button className='bg-[#ffeee8] px-4 text-tutorPrimary rounded-sm'>Create Account</button>
+                <button className='bg-tutorPrimary px-4 text-[#fff] rounded-sm'>Sign in</button>
             </div>
         </nav>
 
